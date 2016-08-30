@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :containers
   get '/'=>'welcome#index', as: :root 
   get 'welcome/index'
 
