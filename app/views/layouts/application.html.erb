@@ -9,6 +9,17 @@
   </head>
 
   <body>
+
+    <div id="wrapper">
+      <div class="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand">
+            <%= link_to "Containers", containers_path %>
+          </li>
+        </ul>
+      </div> <!-- sidebar wrapper -->
+    </div> <!-- wrapper -->
+
     <div id="user-widget">
       <% if current_user %>
         Welcome <strong><%= current_user.name %></strong>!
@@ -17,6 +28,10 @@
         <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
       <% end %>
     </div>
+
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
     <%= yield %>
 
   </body>

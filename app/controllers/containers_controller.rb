@@ -1,4 +1,6 @@
 class ContainersController < ApplicationController
+  before_filter :authenticate
+
   before_action :set_container, only: [:show, :edit, :update, :destroy]
 
   # GET /containers
@@ -24,7 +26,7 @@ class ContainersController < ApplicationController
   # POST /containers
   # POST /containers.json
   def create
-    @container = Container.new(container_params)
+    @container = Container.new(container_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @container.save
@@ -69,6 +71,6 @@ class ContainersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def container_params
-      params.require(:container).permit(:name, :description, :parent_id, :lft, :rgt, :depth, :user_id)
+      params.require(:container).permit(:name, :description, :parent_id)
     end
 end
