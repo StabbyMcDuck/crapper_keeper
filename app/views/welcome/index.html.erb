@@ -1,2 +1,105 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Crapper Keeper - Keep Your Crap In Control</title>
+
+</head>
+
+<body id="page-top">
+
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top">Crapper Keeper</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to "Containers", containers_path %>
+          </li>
+          <li>
+            <a class="page-scroll" href="#services">Thing2</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#portfolio">Thing3</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+  <header>
+    <div class="header-content">
+      <div class="header-content-inner">
+        <h1 id="homeHeading">Crapper Keeper</h1>
+        <h3 id="header-tagline">Keep Your Crap In Order</h3>
+        <hr>
+        <p>This app is for people who have crap.  A lot of crap.</p>
+        <p>Keep track of your crap by logging in where you put things so you can find it later!</p>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="bg-purple" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+          <h2 class="section-heading">Sign in!</h2>
+          <hr class="light">
+          <p class="text-faded">Log in using Facebook:  </p>
+
+          <div id="user-widget">
+            <% if current_user %>
+                Welcome <strong><%= current_user.name %></strong>!
+                <%= link_to "Sign out", signout_path, id: "sign_out" %>
+            <% else %>
+                <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+            <% end %>
+          </div>
+
+          <% flash.each do |key, value| %>
+              <div class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>
+          <%= yield %>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+          <h2 class="section-heading">Let's Get In Touch!</h2>
+          <hr class="primary">
+          <p>This site was made by <a href="www.reginaimhoff.com">Regina Imhoff</a></p>
+        </div>
+        <div class="col-lg-4 text-center">
+          <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+          <p><a href="mailto:regina.imhoff@gmail.com">regina.imhoff@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+</body>

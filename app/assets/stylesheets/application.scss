@@ -10,6 +10,41 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+h1 {
+  font-family: 'Bungee Shade', cursive;
+}
+
+h2, h3, h4, h5, p {
+  font-family: 'Raleway', sans-serif;
+}
+
+.header-content {
+  text-align: center;
+  background-image: url('../app/assets/images/tools.jpeg');
+}
+
+.header-content h1 {
+  font-size: 60px;
+}
+
+header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+}
+
+.bg-purple {
+  background-color: #5A4181;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.bg-purple a {
+  color: lightgray;
+}
