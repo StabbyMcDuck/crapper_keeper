@@ -31,9 +31,11 @@
           <li>
             <%= link_to "Containers", containers_path %>
           </li>
+          <% if current_user %>
           <li>
-            <a class="page-scroll" href="#services">Thing2</a>
+            <%= link_to "Sign out", signout_path, id: "sign_out" %>
           </li>
+          <% end %>
           <li>
             <a class="page-scroll" href="#portfolio">Thing3</a>
           </li>
@@ -52,7 +54,9 @@
         <hr>
         <p>This app is for people who have crap.  A lot of crap.</p>
         <p>Keep track of your crap by logging in where you put things so you can find it later!</p>
-        <h2 class="section-heading">Sign in!</h2>
+        <% if !current_user %>
+          <h2 class="section-heading">Sign in!</h2>
+        <% end %>
       </div>
     </div>
   </header>
@@ -66,10 +70,9 @@
             <% if current_user %>
                 <!-- TODO: get rid of showing user name before publishing -->
                 Welcome <strong><%= current_user.name %></strong>!
-                <%= link_to "Sign out", signout_path, id: "sign_out", class: "btn btn-primary" %>
                 <br><br>
                 <div id="add_some_crap">
-                <%= link_to "Add Some Crap!", containers_path, class: "btn btn-success btn-lg" %>
+                  <%= link_to "Add Some Crap!", containers_path, class: "btn btn-success btn-lg" %>
                 </div>
             <% else %>
                 <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "btn btn-primary" %>
@@ -94,8 +97,7 @@
           <hr class="primary">
           <p>This site was made by <a href="www.reginaimhoff.com">Regina Imhoff</a></p>
         </div>
-        <div class="col-lg-4 text-center">
-          <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+        <div class="col-lg-8 col-lg-offset-2 text-center">
           <p><a href="mailto:regina.imhoff@gmail.com">regina.imhoff@gmail.com</a></p>
         </div>
       </div>

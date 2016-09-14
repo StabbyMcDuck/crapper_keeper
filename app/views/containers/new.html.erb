@@ -2,4 +2,9 @@
 
 <%= render 'form', container: @container %>
 
-<%= link_to 'Back', containers_path %>
+<br>
+<div class="container-back">
+  <div class="col-sm-3">
+    <%= link_to 'Back To Containers', containers_path, class: "btn btn-success btn-lg" %>
+  </div>
+</div>

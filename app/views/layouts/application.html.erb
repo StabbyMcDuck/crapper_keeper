@@ -13,24 +13,35 @@
 
   <body>
 
-    <div id="wrapper">
-      <div class="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li class="sidebar-brand">
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top">Crapper Keeper</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
             <%= link_to "Containers", containers_path %>
           </li>
+          <% if current_user %>
+              <li>
+                <%= link_to "Sign out", signout_path, id: "sign_out" %>
+              </li>
+          <% end %>
+          <li>
+            <a class="page-scroll" href="#portfolio">Thing3</a>
+          </li>
         </ul>
-      </div> <!-- sidebar wrapper -->
-    </div> <!-- wrapper -->
-
-    <div id="user-widget">
-      <% if current_user %>
-        Welcome <strong><%= current_user.name %></strong>!
-        <%= link_to "Sign out", signout_path, id: "sign_out" %>
-      <% else %>
-        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-      <% end %>
+      </div>
+      <!-- /.navbar-collapse -->
     </div>
+    <!-- /.container-fluid -->
 
     <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
