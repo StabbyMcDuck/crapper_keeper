@@ -25,7 +25,6 @@ h2, h3, h4, h5, p {
 
 .header-content {
   text-align: center;
-  background-image: url('../app/assets/images/tools.jpeg');
 }
 
 .header-content h1 {
@@ -38,13 +37,30 @@ header {
 
 }
 
-.bg-purple {
-  background-color: #5A4181;
+.sign_in_section {
+  background-image: url('/tools.jpeg');
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   color: white;
-  padding-top: 30px;
-  padding-bottom: 50px;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.section-heading {
+  font-family: 'Bungee Shade', cursive;
 }
 
 .bg-purple a {
   color: lightgray;
+}
+
+.btn-lg {
+  color: white;
+  font-weight: bolder;
 }

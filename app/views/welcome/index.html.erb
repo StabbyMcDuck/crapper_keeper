@@ -52,25 +52,27 @@
         <hr>
         <p>This app is for people who have crap.  A lot of crap.</p>
         <p>Keep track of your crap by logging in where you put things so you can find it later!</p>
+        <h2 class="section-heading">Sign in!</h2>
       </div>
     </div>
   </header>
 
 
-  <section class="bg-purple" id="about">
+  <section class="sign_in_section" id="about">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 text-center">
-          <h2 class="section-heading">Sign in!</h2>
-          <hr class="light">
-          <p class="text-faded">Log in using Facebook:  </p>
-
           <div id="user-widget">
             <% if current_user %>
+                <!-- TODO: get rid of showing user name before publishing -->
                 Welcome <strong><%= current_user.name %></strong>!
-                <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                <%= link_to "Sign out", signout_path, id: "sign_out", class: "btn btn-primary" %>
+                <br><br>
+                <div id="add_some_crap">
+                <%= link_to "Add Some Crap!", containers_path, class: "btn btn-success btn-lg" %>
+                </div>
             <% else %>
-                <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+                <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "btn btn-primary" %>
             <% end %>
           </div>
 
