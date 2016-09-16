@@ -52,13 +52,13 @@
         <hr>
         <p>This app is for people who have crap.  A lot of crap.</p>
         <p>Keep track of your crap by logging in where you put things so you can find it later!</p>
-        <% if !current_user %>
-          <h2 class="section-heading">Sign in!</h2>
+        <br>
+        <% if current_user %>
+          Welcome <strong><%= current_user.name %></strong>!
         <% end %>
       </div>
     </div>
   </header>
-
 
   <section class="sign_in_section" id="about">
     <div class="container">
@@ -67,13 +67,11 @@
           <div id="user-widget">
             <% if current_user %>
                 <!-- TODO: get rid of showing user name before publishing -->
-                Welcome <strong><%= current_user.name %></strong>!
-                <br><br>
                 <div id="add_some_crap">
-                  <%= link_to "Add Some Crap!", containers_path, class: "btn btn-success btn-lg" %>
+                  <h3><%= link_to "Add Some Crap!", containers_path, class: "btn btn-success btn-lg" %></h3>
                 </div>
             <% else %>
-                <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "btn btn-primary" %>
+                <h3 class="large-font-sign-in"><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "btn btn-primary btn-lg" %></h3>
             <% end %>
           </div>
 
@@ -91,12 +89,16 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 text-center">
-          <h2 class="section-heading">Let's Get In Touch!</h2>
+          <h2 class="contact_info">Let's Get In Touch!</h2>
           <hr class="primary">
-          <p>This site was made by <a href="www.reginaimhoff.com">Regina Imhoff</a></p>
-        </div>
-        <div class="col-lg-8 col-lg-offset-2 text-center">
-          <p><a href="mailto:regina.imhoff@gmail.com">regina.imhoff@gmail.com</a></p>
+
+          <span class="glyphicon glyphicon-envelope"></span>
+          <span><a href="mailto:regina.imhoff@gmail.com">regina.imhoff@gmail.com</a></span>
+          <br>
+          <span class="glyphicon glyphicon-education"></span>
+          <span><a href="mailto:imhoffr@oregonstate.edu">imhoffr@oregonstate.edu</a></span>
+          <br>
+          <p>This site was made by <a href="http://www.reginaimhoff.com">Regina Imhoff</a></p>
         </div>
       </div>
     </div>
