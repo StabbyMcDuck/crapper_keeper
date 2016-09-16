@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @container.name %>
@@ -12,7 +10,7 @@
 
 <p>
   <strong>Parent:</strong>
-  <%= @container.parent_id %>
+  <%= @container.parent.try!(:name) %>
 </p>
 
 <%= link_to 'Edit', edit_container_path(@container) %> |

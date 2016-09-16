@@ -17,7 +17,7 @@
       <tr>
         <td><%= container.name %></td>
         <td><%= container.description %></td>
-        <td><%= container.parent_id %></td>
+        <td><%= container.parent.try!(:name) %></td>
         <td><%= link_to 'Show', container %></td>
         <td><%= link_to 'Edit', edit_container_path(container) %></td>
         <td><%= link_to 'Destroy', container, method: :delete, data: { confirm: 'Are you sure?' } %></td>

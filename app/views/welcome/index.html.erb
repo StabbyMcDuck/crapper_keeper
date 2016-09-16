@@ -22,7 +22,7 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
           <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand page-scroll" href="#page-top">Crapper Keeper</a>
+        <%= link_to "Crapper Keeper", root_path, {class: "navbar-brand page-scroll"}%>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,9 +36,7 @@
             <%= link_to "Sign out", signout_path, id: "sign_out" %>
           </li>
           <% end %>
-          <li>
-            <a class="page-scroll" href="#portfolio">Thing3</a>
-          </li>
+
         </ul>
       </div>
       <!-- /.navbar-collapse -->

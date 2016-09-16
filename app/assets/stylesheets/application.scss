@@ -14,7 +14,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
+body {
+  padding-top: 65px;
+}
 h1 {
   font-family: 'Bungee Shade', cursive;
 }
