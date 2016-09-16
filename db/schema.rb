@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20160829201118) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "containers", force: :cascade do |t|
     t.string   "name",                    null: false
     t.text     "description"
@@ -22,10 +25,10 @@ ActiveRecord::Schema.define(version: 20160829201118) do
     t.integer  "user_id",                 null: false
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.index ["lft"], name: "index_containers_on_lft"
-    t.index ["parent_id"], name: "index_containers_on_parent_id"
-    t.index ["rgt"], name: "index_containers_on_rgt"
-    t.index ["user_id"], name: "index_containers_on_user_id"
+    t.index ["lft"], name: "index_containers_on_lft", using: :btree
+    t.index ["parent_id"], name: "index_containers_on_parent_id", using: :btree
+    t.index ["rgt"], name: "index_containers_on_rgt", using: :btree
+    t.index ["user_id"], name: "index_containers_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +41,6 @@ ActiveRecord::Schema.define(version: 20160829201118) do
     t.datetime "updated_at",       null: false
   end
 
+  add_foreign_key "containers", "containers", column: "parent_id"
+  add_foreign_key "containers", "users"
 end

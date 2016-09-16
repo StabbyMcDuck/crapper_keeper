@@ -3,7 +3,7 @@ class CreateContainers < ActiveRecord::Migration[5.0]
     create_table :containers do |t|
       t.string :name, null: false
       t.text :description, null: true
-      t.references :parent, null: true, index: true, foreign_key: true
+      t.references :parent, null: true, index: true, foreign_key: false
       t.integer :lft, null: false, index: true
       t.integer :rgt, null: false, index: true
       t.integer :depth, null: false, default: 0
@@ -11,6 +11,8 @@ class CreateContainers < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+    add_foreign_key :containers, :containers, column: :parent_id
   end
 
   def self.down
