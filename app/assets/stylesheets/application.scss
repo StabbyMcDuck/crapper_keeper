@@ -56,10 +56,6 @@ header {
 }
 
 
-.bg-purple a {
-  color: lightgray;
-}
-
 .btn-lg {
   color: white;
   font-weight: bolder;
@@ -86,6 +82,7 @@ header {
   border-radius: 24px;
   font-size: 75%;
 }
+
 #add_some_crap .btn.outline {
   background: none;
 }
@@ -99,13 +96,13 @@ a {
 }
 
 @media screen and (max-width: 770px){
-  .large-font-sign-in .btn {
-    font-size: 16px;
-  }
+    .large-font-sign-in .btn {
+      font-size: 16px;
+    }
 }
 
 @media screen and (min-width:771px) and (max-width:1040px){
-  .large-font-sign-in .btn {
-    font-size: 16px;
-  }
+    .large-font-sign-in .btn {
+      font-size: 16px;
+    }
 }
