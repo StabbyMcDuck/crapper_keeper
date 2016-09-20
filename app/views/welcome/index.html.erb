@@ -54,7 +54,7 @@
         <p>Keep track of your crap by logging in where you put things so you can find it later!</p>
         <br>
         <% if current_user %>
-          Welcome <strong><%= current_user.name %></strong>!
+            Welcome <strong><%= current_user.name %></strong>!
         <% end %>
       </div>
     </div>
@@ -71,7 +71,8 @@
                   <h3><%= link_to "Add Some Crap!", containers_path, class: "btn btn-success btn-lg" %></h3>
                 </div>
             <% else %>
-                <h3 class="large-font-sign-in"><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: "btn btn-primary btn-lg" %></h3>
+                <h3 class="large-font-sign-in"><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in",
+                                                           class: "btn btn-primary btn-lg" %></h3>
             <% end %>
           </div>
 
@@ -91,7 +92,6 @@
         <div class="col-lg-8 col-lg-offset-2 text-center">
           <h2 class="contact_info">Let's Get In Touch!</h2>
           <hr class="primary">
-
           <span class="glyphicon glyphicon-envelope"></span>
           <span><a href="mailto:regina.imhoff@gmail.com">regina.imhoff@gmail.com</a></span>
           <br>
