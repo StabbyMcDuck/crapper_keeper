@@ -11,10 +11,11 @@
 
   <p>
     <strong>Parent:</strong>
-    <% unless @container.parent %>
-        <p> No parent container! </p>
-    <% end %>
-    <%= @container.parent.try!(:name) %>
+    <% if !@container.parent %>
+        No parent container!
+    <% else %>
+        <%= @container.parent.try!(:name) %>
+  <% end %>
   </p>
   <span>
     <%= link_to 'Back To Containers', containers_path, class: "btn btn-success btn-lg" %>
