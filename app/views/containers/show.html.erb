@@ -11,12 +11,15 @@
 
   <p>
     <strong>Parent:</strong>
+    <% unless Container.parent.exists? %>
+        <p> No parent container! </p>
+    <% end %>
     <%= @container.parent.try!(:name) %>
   </p>
   <span>
     <%= link_to 'Back To Containers', containers_path, class: "btn btn-success btn-lg" %>
   </span>
   <span>
-    <%= link_to 'Edit Container', edit_container_path(@container), class: "btn btn-success btn-lg" %> |
+    <%= link_to 'Edit Container', edit_container_path(@container), class: "btn btn-success btn-lg" %>
   </span>
 </div>
