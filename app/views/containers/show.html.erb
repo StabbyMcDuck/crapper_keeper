@@ -11,7 +11,7 @@
 
   <p>
     <strong>Parent:</strong>
-    <% unless @container.parent.exists? %>
+    <% unless @container.parent %>
         <p> No parent container! </p>
     <% end %>
     <%= @container.parent.try!(:name) %>
