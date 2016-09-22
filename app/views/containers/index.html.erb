@@ -2,7 +2,7 @@
 
 
 <div class="col-lg-8 col-lg-offset-2">
-  <h1>Containers</h1>
+  <h1>Add Containers</h1>
   <p>Crapper Keeper works backwards - start with the biggest container (your house, apartment, building, etc.)
 and keep working down into the container your item will be stored in. </p>
   <br>
@@ -10,7 +10,14 @@ and keep working down into the container your item will be stored in. </p>
 </div>
 <br>
 
+
+
 <div class="col-lg-8 col-lg-offset-2">
+  
+  <% if !container %>
+      <p>No containers to display!  Click the button to add a new container!</p>
+  <% end %>
+
   <table class="table">
     <thead>
       <tr>
