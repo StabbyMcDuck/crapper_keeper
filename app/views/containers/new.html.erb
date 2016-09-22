@@ -1,13 +1,15 @@
 <html>
 <body>
-<h1>New Container</h1>
+<div class="col-lg-8 col-lg-offset-2">
+  <h1>New Container</h1>
 
-<%= render 'form', container: @container %>
+  <%= render 'form', container: @container %>
 
-<br>
-<div class="container-back">
-  <div class="col-sm-3">
-    <%= link_to 'Back To Containers', containers_path, class: "btn btn-success btn-lg" %>
+  <br>
+  <div class="container-back">
+    <div class="col-sm-3">
+      <%= link_to 'Back To Containers', containers_path, class: "btn btn-success btn-lg" %>
+    </div>
   </div>
 </div>
 </body>
