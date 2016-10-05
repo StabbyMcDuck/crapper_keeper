@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160829201118) do
+ActiveRecord::Schema.define(version: 20161004164508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 20160829201118) do
     t.index ["user_id"], name: "index_containers_on_user_id", using: :btree
   end
 
+  create_table "items", force: :cascade do |t|
+    t.text     "name",                     null: false
+    t.text     "description"
+    t.integer  "container_id",             null: false
+    t.integer  "count",        default: 1, null: false
+    t.datetime "last_used_at"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["container_id"], name: "index_items_on_container_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
@@ -43,4 +54,5 @@ ActiveRecord::Schema.define(version: 20160829201118) do
 
   add_foreign_key "containers", "containers", column: "parent_id"
   add_foreign_key "containers", "users"
+  add_foreign_key "items", "containers"
 end

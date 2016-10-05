@@ -26,7 +26,7 @@
 
 development:
   adapter: postgresql
-  host: localhost
+  #host: localhost
   encoding: unicode
   database: crapper_keeper_development
   pool: 5
@@ -37,4 +37,3 @@ production:
 
 test:
   adapter: postgresql
-

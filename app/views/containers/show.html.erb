@@ -17,6 +17,14 @@
         <%= @container.parent.try!(:name) %>
   <% end %>
   </p>
+  <p>
+    <strong>Items In This Container:</strong>
+    <% if !@item.container_reference %>
+      No items yet!
+    <% else %>
+      <%= @item.name %>
+      <%= @item.description %>
+  </p>
   <span>
   <%= link_to 'Add Items', items_path, class: "btn btn-success btn-lg" %>
   </span>
