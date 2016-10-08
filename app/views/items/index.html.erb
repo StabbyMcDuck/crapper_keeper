@@ -1,35 +1,22 @@
 <p id="notice"><%= notice %></p>
 
+<div class="col-lg-8 col-lg-offset-2">
 <h1>Items</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Container reference</th>
-      <th>Count</th>
-      <th>Last used at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= item.name %></td>
-        <td><%= item.description %></td>
-        <td><%= item.container_reference %></td>
-        <td><%= item.count %></td>
-        <td><%= item.last_used_at %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<p>Locate your stuff because Mom is busy.</p>
+<br>
+</div>
 <br>
 
-<%= link_to 'New Item', new_item_path %>
+<div class="col-lg-8 col-lg-offset-2">
+
+  <% unless Item.exists? %>
+      <p>No items to display!  Click the button to add a new container!</p>
+  <% end %>
+
+  <%= render 'table', items: @items %>
+
+
+  <br>
+</div>
+
+<%= link_to 'Add A New Item', new_item_path(container_id: @container.try!(:id)), class: "btn btn-success btn-lg" %>

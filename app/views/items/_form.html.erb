@@ -11,19 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_area :name %>
+  <div class="name-field">
+    <div class="col-sm-3">
+      <%= f.label :name %>
+    </div>
+    <div class="col-sm-9">
+      <%= f.text_field :name %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <div class="description-field">
+    <div class="col-sm-3">
+      <%= f.label :description %>
+    </div>
+    <div class="col-sm-9">
+      <%= f.text_area :description %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :container_reference %>
-    <%= f.text_field :container_reference %>
+  <%- containers = Container.all %>
+  <div class="container-field">
+    <div class="col-sm-3">
+      <%= f.label :container %>
+    </div>
+
+    <div class="col-sm-9">
+      <%= f.select :container_id, containers.collect { |c| [ c.name, c.id, ] }, {}, { "data-live-search" => true, }%>
+    </div>
   </div>
 
   <div class="field">
@@ -34,6 +48,7 @@
   <div class="field">
     <%= f.label :last_used_at %>
     <%= f.datetime_select :last_used_at %>
+
   </div>
 
   <div class="actions">

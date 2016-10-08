@@ -71,8 +71,15 @@
                   <h3><%= link_to "Add Some Crap!", containers_path, class: "btn btn-success btn-lg" %></h3>
                 </div>
             <% else %>
-                <h3 class="large-font-sign-in"><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in",
-                                                           class: "btn btn-primary btn-lg" %></h3>
+                <h3 class="large-font-sign-in">
+                  <%= link_to "Sign in with Facebook",
+                              "/auth/facebook", id: "sign_in",
+                              class: "btn btn-primary btn-lg" %></h3>
+                              <br>
+                <h3 class="large-font-sign-in">
+                  <%= link_to "Sign in with Github",
+                              "/auth/github", id: "sign_in",
+                              class: "btn btn-primary btn-lg" %></h3>
             <% end %>
           </div>
 

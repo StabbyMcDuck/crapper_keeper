@@ -3,13 +3,13 @@
 one:
   name: MyText
   description: MyText
-  container_reference: 
+  container_id:
   count: 1
   last_used_at: 2016-10-04 11:45:08
 
 two:
   name: MyText
   description: MyText
-  container_reference: 
+  container_id: 
   count: 1
   last_used_at: 2016-10-04 11:45:08

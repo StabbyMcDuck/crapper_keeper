@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_container, only: [:index, :new]
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = Item.all.where(items_params)
   end
 
   # GET /items/1
@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @item = Item.new
+    @item = Item.new(container_id: @container.try!(:id))
   end
 
   # GET /items/1/edit
@@ -67,8 +67,16 @@ class ItemsController < ApplicationController
       @item = Item.find(params[:id])
     end
 
+    def set_container
+      @container = Container.where(id: params[:container_id]).first
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :description, :container_reference, :count, :last_used_at)
+      params.require(:item).permit(:name, :description, :container_id, :count, :last_used_at)
+    end
+
+    def items_params
+      params.permit(:container_id)
     end
 end
