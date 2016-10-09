@@ -25,5 +25,20 @@
   <%= @item.last_used_at %>
 </p>
 
+<p>
+  <strong>Do you want to be notified when you haven't used this?</strong>
+  <%= @item.notification_style %>
+<p>
+
+<% unless @item.notification_style == "none" %>
+<p>
+  <strong>How often do you want to get notifications?</strong>
+  <ul>
+  <% @item.notification_frequencies.each { |notification_frequency| %>
+      <li><%= notification_frequency %></li>
+  <% } %>
+  </ul>
+<p>
+<% end %>
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>
