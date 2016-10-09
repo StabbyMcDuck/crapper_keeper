@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   private
   def authenticate
-    redirect_to(:root, flash: {error: "Please use Facebook to log in!"}) unless current_user
+    redirect_to(:root, flash: {error: "Please use Facebook or Github to log in!"}) unless current_user
   end
 
   def current_user
