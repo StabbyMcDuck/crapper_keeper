@@ -68,7 +68,7 @@
   <div class="radio-button">
     <div class="row">
       <div class="col-xs-4">
-        <span><%= f.label :notification_style, :class => "radio-inline" %></span>
+        <span><%= f.label :notification_style, :item_wrapper_class => 'radio_container' %></span>
       </div>
       <div class="col-xs-8">
         <span><%= f.collection_radio_buttons :notification_style, Item::NOTIFICATION_STYLES, ->(value) { value }, ->(text) { text }, { allow_blank: false, :class => "radio-inline" } %></span>
@@ -81,7 +81,7 @@
   <div class="checkbox">
     <div class="row">
       <div class="col-xs-4">
-        <span><%= f.label :notification_frequencies, "Notify when unused", :class => "checkbox inline" %></span>
+        <span><%= f.label :notification_frequencies, "Notify when unused", :item_wrapper_class => 'checkbox_container' %></span>
       </div>
       <div class="col-xs-8">
         <span><%= f.collection_check_boxes :notification_frequencies, Item::NOTIFICATION_FREQUENCIES, ->(value) { value }, ->(text) { text }, { include_hidden: false, :class => "checkbox inline" } %></span>
