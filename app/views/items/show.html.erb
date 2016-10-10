@@ -27,7 +27,7 @@
 
 <p>
   <strong>Do you want to be notified when you haven't used this?</strong>
-  <%= @item.notification_style %>
+  <span><%= @item.notification_style %></span>
 <p>
 
 <% unless @item.notification_style == "none" %>
@@ -35,7 +35,7 @@
   <strong>How often do you want to get notifications?</strong>
   <ul>
   <% @item.notification_frequencies.each { |notification_frequency| %>
-      <li><%= notification_frequency %></li>
+      <span><li><%= notification_frequency %></li></span>
   <% } %>
   </ul>
 <p>
