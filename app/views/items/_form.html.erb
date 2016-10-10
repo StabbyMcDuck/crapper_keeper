@@ -66,18 +66,29 @@
 
   <div class="form-group">
   <div class="radio-button">
-    <span><%= f.label :notification_style, :class => "radio-inline" %></span>
-
-    <span><%= f.collection_radio_buttons :notification_style, Item::NOTIFICATION_STYLES, ->(value) { value }, ->(text) { text }, { allow_blank: false, :class => "radio-inline" } %></span>
-  </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <span><%= f.label :notification_style, :class => "radio-inline" %></span>
+      </div>
+      <div class="col-xs-8">
+        <span><%= f.collection_radio_buttons :notification_style, Item::NOTIFICATION_STYLES, ->(value) { value }, ->(text) { text }, { allow_blank: false, :class => "radio-inline" } %></span>
+      </div>
+      </div>
+    </div>
     </div>
 
-        <div class="form-group">
+  <div class="form-group">
   <div class="checkbox">
-    <span><%= f.label :notification_frequencies, "Notify when unused", :class => "checkbox inline" %></span>
-    <span><%= f.collection_check_boxes :notification_frequencies, Item::NOTIFICATION_FREQUENCIES, ->(value) { value }, ->(text) { text }, { include_hidden: false, :class => "checkbox inline" } %></span>
+    <div class="row">
+      <div class="col-xs-4">
+        <span><%= f.label :notification_frequencies, "Notify when unused", :class => "checkbox inline" %></span>
+      </div>
+      <div class="col-xs-8">
+        <span><%= f.collection_check_boxes :notification_frequencies, Item::NOTIFICATION_FREQUENCIES, ->(value) { value }, ->(text) { text }, { include_hidden: false, :class => "checkbox inline" } %></span>
+      </div>
+      </div>
   </div>
-          </div>
+  </div>
 
         <div class="form-group">
   <div class="actions">
