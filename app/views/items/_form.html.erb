@@ -66,15 +66,16 @@
 
   <div class="form-group">
   <div class="radio-button">
-    <%= f.label :notification_style %>
-    <%= f.collection_radio_buttons :notification_style, Item::NOTIFICATION_STYLES, ->(value) { value }, ->(text) { text }, { allow_blank: false } %>
+    <span><%= f.label :notification_style %></span>
+
+    <span><%= f.collection_radio_buttons :notification_style, Item::NOTIFICATION_STYLES, ->(value) { value }, ->(text) { text }, { allow_blank: false } %></span>
   </div>
     </div>
 
         <div class="form-group">
   <div class="checkbox">
-    <%= f.label :notification_frequencies, "Notify when unused" %>
-    <%= f.collection_check_boxes :notification_frequencies, Item::NOTIFICATION_FREQUENCIES, ->(value) { value }, ->(text) { text }, { include_hidden: false } %>
+    <span><%= f.label :notification_frequencies, "Notify when unused" %></span>
+    <span><%= f.collection_check_boxes :notification_frequencies, Item::NOTIFICATION_FREQUENCIES, ->(value) { value }, ->(text) { text }, { include_hidden: false } %></span>
   </div>
           </div>
 
