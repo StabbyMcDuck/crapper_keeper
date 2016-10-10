@@ -1,34 +1,42 @@
-<%= form_for(item) do |f| %>
-  <% if item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+<form>
+  <div class="form-group">
+    <%= form_for(item) do |f| %>
+      <% if item.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
-      <ul>
-      <% item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% item.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
+  </div>
 
-  <div class="name-field">
-    <div class="col-sm-3">
-      <%= f.label :name %>
-    </div>
-    <div class="col-sm-9">
-      <%= f.text_field :name %>
+  <div class="form-group">
+    <div class="name-field">
+      <div class="col-sm-3">
+        <%= f.label :name %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.text_field :name %>
+      </div>
     </div>
   </div>
 
-  <div class="description-field">
-    <div class="col-sm-3">
-      <%= f.label :description %>
-    </div>
-    <div class="col-sm-9">
-      <%= f.text_area :description %>
+  <div class="form-group">
+    <div class="description-field">
+      <div class="col-sm-3">
+        <%= f.label :description %>
+      </div>
+      <div class="col-sm-9">
+        <%= f.text_area :description %>
+      </div>
     </div>
   </div>
 
+  <div class="form-group">
   <%- containers = Container.all %>
   <div class="container-field">
     <div class="col-sm-3">
@@ -39,29 +47,41 @@
       <%= f.select :container_id, containers.collect { |c| [ c.name, c.id, ] }, {}, { "data-live-search" => true, }%>
     </div>
   </div>
+  </div>
 
+  <div class="form-group">
   <div class="field">
     <%= f.label :count %>
     <%= f.number_field :count %>
   </div>
+  </div>
 
+  <div class="form-group">
   <div class="field">
     <%= f.label :last_used_at %>
     <%= f.datetime_select :last_used_at %>
 
   </div>
+  </div>
 
+  <div class="form-group">
   <div class="radio-button">
     <%= f.label :notification_style %>
     <%= f.collection_radio_buttons :notification_style, Item::NOTIFICATION_STYLES, ->(value) { value }, ->(text) { text }, { allow_blank: false } %>
   </div>
+    </div>
 
+        <div class="form-group">
   <div class="checkbox">
     <%= f.label :notification_frequencies, "Notify when unused" %>
     <%= f.collection_check_boxes :notification_frequencies, Item::NOTIFICATION_FREQUENCIES, ->(value) { value }, ->(text) { text }, { include_hidden: false } %>
   </div>
+          </div>
 
+        <div class="form-group">
   <div class="actions">
     <%= f.submit %>
   </div>
+          </div>
 <% end %>
+</form>
