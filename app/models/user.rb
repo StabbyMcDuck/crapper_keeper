@@ -1,4 +1,11 @@
-class User < ApplicationRecord
+class User 
+  include Neo4j::ActiveNode
+  property :provider, type: String
+  property :uid, type: String
+  property :name, type: String
+  property :oauth_token, type: String
+  property :oauth_expires_at, type: DateTime
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider
@@ -9,4 +16,5 @@ class User < ApplicationRecord
       user.save!
     end
   end
+
 end
