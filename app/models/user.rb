@@ -6,6 +6,9 @@ class User
   property :oauth_token, type: String
   property :oauth_expires_at, type: DateTime
 
+  has_many :out, :containers, type: :OWNS
+
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
       user.provider = auth.provider
