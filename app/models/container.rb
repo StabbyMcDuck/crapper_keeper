@@ -1,6 +1,12 @@
-class Container < ApplicationRecord
-  acts_as_nested_set dependent: :destroy
+class Container 
+  include Neo4j::ActiveNode
+  property :name, type: String
+  property :description, type: String
 
-  # associations
-  has_many :items, dependent: :destroy
+  has_one :in, :parent, type: :CONTAINS, model_class: :Container
+  has_many :out, :items, type: :CONTAINS
+  has_many :out, :containers, type: :CONTAINS
+  has_one :in, :user, type: :OWNS
+
+
 end

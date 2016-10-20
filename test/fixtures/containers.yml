@@ -3,17 +3,11 @@
 one:
   name: MyString
   description: MyText
-  parent_id: 1
-  lft: 1
-  rgt: 1
-  depth: 1
-  user_id: 1
+  parent: one
+  user: one
 
 two:
   name: MyString
   description: MyText
-  parent_id: 1
-  lft: 1
-  rgt: 1
-  depth: 1
-  user_id: 1
+  parent: two
+  user: two

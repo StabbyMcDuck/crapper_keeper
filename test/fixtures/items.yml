@@ -3,13 +3,17 @@
 one:
   name: MyText
   description: MyText
-  container_id:
   count: 1
-  last_used_at: 2016-10-04 11:45:08
+  last_used_at: 2016-10-15 13:18:50
+  notification_style: MyString
+  notification_frequencies: MyString
+  container: one
 
 two:
   name: MyText
   description: MyText
-  container_id: 
   count: 1
-  last_used_at: 2016-10-04 11:45:08
+  last_used_at: 2016-10-15 13:18:50
+  notification_style: MyString
+  notification_frequencies: MyString
+  container: two

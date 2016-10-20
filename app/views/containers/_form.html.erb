@@ -31,8 +31,8 @@
     </div>
   </div>
 
-  <%- parent_containers = Container.where.not(id: container.id) %>
-  <%- if parent_containers.exists? %>
+  <%- parent_containers = Container.all.to_a.reject { |c| c.id == container.id } %>
+  <%- unless parent_containers.empty? %>
     <div class="parent-field">
       <div class="col-sm-3">
         <%= f.label :parent %>

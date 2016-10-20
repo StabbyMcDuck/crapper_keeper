@@ -1,4 +1,6 @@
-class Item < ApplicationRecord
+class Item
+  include Neo4j::ActiveNode
+
   # constants
   NOTIFICATION_FREQUENCIES = %w(immediately daily weekly monthly)
   NOTIFICATION_FREQUENCY_SET = Set.new NOTIFICATION_FREQUENCIES
@@ -14,16 +16,22 @@ class Item < ApplicationRecord
   validates :count,
             presence: true,
             numericality: {
-              only_integer: true,
-              greater_than_or_equal_to: 0
+                only_integer: true,
+                greater_than_or_equal_to: 0
             }
   validates :notification_style,
             inclusion: {
                 in: NOTIFICATION_STYLES
             }
 
-  # associations
-  belongs_to :container
+  property :name, type: String
+  property :description, type: String
+  property :count, type: Integer
+  property :last_used_at, type: DateTime
+  property :notification_style, type: String
+  property :notification_frequencies, type: String
+
+  has_one :in, :container, type: :CONTAINS
 
   # methods
 
