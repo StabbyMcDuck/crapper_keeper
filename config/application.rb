@@ -29,5 +29,8 @@ module CrapperKeeper
     # -- all .rb files in that directory are automatically loaded.
 
     config.generators { |g| g.orm :neo4j }
+
+    config.neo4j.session_type = :server_db
+    config.neo4j.session_path = ENV["GRAPHENEDB_URL"] || 'http://localhost:7474'
   end
 end
