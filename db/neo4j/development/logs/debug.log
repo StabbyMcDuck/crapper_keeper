@@ -497,3 +497,95 @@ Storage files: (filename : modification date - size)
 2016-10-20 06:59:53.161+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 8688ms.
 2016-10-20 07:12:07.145+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 8154ms.
 2016-10-20 15:13:01.329+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 8360ms.
+2016-10-20 16:15:37.992+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:User(uuid) [provider: {key=lucene, version=1.0}]]
+2016-10-20 16:15:38.019+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Completed node store scan. Flushing all pending deletes.
+BatchingMultipleIndexPopulator{activeTasks=0, executor=java.util.concurrent.ThreadPoolExecutor@4d551eec[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], batchedUpdates = [], queuedUpdates = 0}
+2016-10-20 16:15:38.019+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Shutting down executor.
+BatchingMultipleIndexPopulator{activeTasks=0, executor=java.util.concurrent.ThreadPoolExecutor@4d551eec[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], batchedUpdates = [], queuedUpdates = 0}
+2016-10-20 16:15:38.073+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:User(uuid) [provider: {key=lucene, version=1.0}]]
+2016-10-20 16:15:38.073+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2016-10-20 16:15:38.126+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2016-10-20 16:15:41.843+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [5]:  Starting check pointing...
+2016-10-20 16:15:41.843+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [5]:  Starting store flush...
+2016-10-20 16:15:41.858+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 5 to [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-10-20 16:15:41.859+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 5 to [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-10-20 16:15:41.867+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [5]:  Store flush completed
+2016-10-20 16:15:41.867+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [5]:  Starting appending check point entry into the tx log...
+2016-10-20 16:15:41.867+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [5]:  Appending check point entry into the tx log completed
+2016-10-20 16:15:41.867+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [5]:  Check pointing completed
+2016-10-20 16:15:41.867+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-10-20 16:15:41.867+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-10-20 16:15:55.380+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :User(uuid) with 1 unique values in sample of avg size 1 taken from index containing 1 entries
+2016-10-20 16:20:41.949+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [7]:  Starting check pointing...
+2016-10-20 16:20:41.950+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [7]:  Starting store flush...
+2016-10-20 16:20:41.962+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 7 to [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-10-20 16:20:41.964+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 7 to [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-10-20 16:20:41.967+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [7]:  Store flush completed
+2016-10-20 16:20:41.967+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [7]:  Starting appending check point entry into the tx log...
+2016-10-20 16:20:41.967+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [7]:  Appending check point entry into the tx log completed
+2016-10-20 16:20:41.967+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [7]:  Check pointing completed
+2016-10-20 16:20:41.968+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-10-20 16:20:41.968+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-10-20 16:23:50.558+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:Container(uuid) [provider: {key=lucene, version=1.0}]]
+2016-10-20 16:23:50.564+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Completed node store scan. Flushing all pending deletes.
+BatchingMultipleIndexPopulator{activeTasks=0, executor=java.util.concurrent.ThreadPoolExecutor@3af65d91[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], batchedUpdates = [], queuedUpdates = 0}
+2016-10-20 16:23:50.564+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Shutting down executor.
+BatchingMultipleIndexPopulator{activeTasks=0, executor=java.util.concurrent.ThreadPoolExecutor@3af65d91[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], batchedUpdates = [], queuedUpdates = 0}
+2016-10-20 16:23:50.569+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:Container(uuid) [provider: {key=lucene, version=1.0}]]
+2016-10-20 16:23:50.569+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2016-10-20 16:23:50.572+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2016-10-20 16:25:42.027+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [10]:  Starting check pointing...
+2016-10-20 16:25:42.027+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [10]:  Starting store flush...
+2016-10-20 16:25:42.033+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 10 to [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-10-20 16:25:42.035+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 10 to [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-10-20 16:25:42.037+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [10]:  Store flush completed
+2016-10-20 16:25:42.037+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [10]:  Starting appending check point entry into the tx log...
+2016-10-20 16:25:42.038+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [10]:  Appending check point entry into the tx log completed
+2016-10-20 16:25:42.038+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [10]:  Check pointing completed
+2016-10-20 16:25:42.038+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-10-20 16:25:42.038+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-10-20 16:46:50.651+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [12]:  Starting check pointing...
+2016-10-20 16:46:50.652+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [12]:  Starting store flush...
+2016-10-20 16:46:50.663+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 12 to [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-10-20 16:46:50.663+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 12 to [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-10-20 16:46:50.666+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [12]:  Store flush completed
+2016-10-20 16:46:50.666+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [12]:  Starting appending check point entry into the tx log...
+2016-10-20 16:46:50.666+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [12]:  Appending check point entry into the tx log completed
+2016-10-20 16:46:50.666+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [12]:  Check pointing completed
+2016-10-20 16:46:50.666+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-10-20 16:46:50.666+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-10-20 16:46:53.609+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Container(uuid) with 1 unique values in sample of avg size 1 taken from index containing 1 entries
+2016-10-20 16:55:54.258+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population started: [:Item(uuid) [provider: {key=lucene, version=1.0}]]
+2016-10-20 16:55:54.260+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Completed node store scan. Flushing all pending deletes.
+BatchingMultipleIndexPopulator{activeTasks=0, executor=java.util.concurrent.ThreadPoolExecutor@2899bd6a[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], batchedUpdates = [], queuedUpdates = 0}
+2016-10-20 16:55:54.260+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Shutting down executor.
+BatchingMultipleIndexPopulator{activeTasks=0, executor=java.util.concurrent.ThreadPoolExecutor@2899bd6a[Running, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], batchedUpdates = [], queuedUpdates = 0}
+2016-10-20 16:55:54.263+0000 INFO  [o.n.k.i.a.i.IndexPopulationJob] Index population completed. Index is now online: [:Item(uuid) [provider: {key=lucene, version=1.0}]]
+2016-10-20 16:55:54.263+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2016-10-20 16:55:54.264+0000 INFO  [o.n.k.i.a.KernelSchemaStateStore] Schema state store has been cleared.
+2016-10-20 16:56:00.801+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [15]:  Starting check pointing...
+2016-10-20 16:56:00.803+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [15]:  Starting store flush...
+2016-10-20 16:56:00.810+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 15 to [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-10-20 16:56:00.811+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 15 to [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b], from [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a].
+2016-10-20 16:56:00.813+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [15]:  Store flush completed
+2016-10-20 16:56:00.813+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [15]:  Starting appending check point entry into the tx log...
+2016-10-20 16:56:00.814+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [15]:  Appending check point entry into the tx log completed
+2016-10-20 16:56:00.814+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [15]:  Check pointing completed
+2016-10-20 16:56:00.814+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-10-20 16:56:00.814+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-10-20 17:13:45.432+0000 INFO  [o.n.c.i.ExecutionEngine] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.name = {n_name}) RETURN n LIMIT {limit_1}
+2016-10-20 17:13:45.436+0000 INFO  [o.n.c.i.CypherCompiler] Discarded stale query from the query cache: MATCH (n:`User`) WHERE (n.name = {n_name}) RETURN n LIMIT {limit_1}
+2016-10-20 17:13:51.061+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [20]:  Starting check pointing...
+2016-10-20 17:13:51.061+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [20]:  Starting store flush...
+2016-10-20 17:13:51.071+0000 INFO  [o.n.k.i.s.c.CountsTracker] About to rotate counts store at transaction 20 to [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-10-20 17:13:51.071+0000 INFO  [o.n.k.i.s.c.CountsTracker] Successfully rotated counts store at transaction 20 to [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.a], from [/Users/duckstab/git/StabbyMcDuck/crapper_keeper/db/neo4j/development/data/databases/graph.db/neostore.counts.db.b].
+2016-10-20 17:13:51.073+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [20]:  Store flush completed
+2016-10-20 17:13:51.073+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [20]:  Starting appending check point entry into the tx log...
+2016-10-20 17:13:51.073+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [20]:  Appending check point entry into the tx log completed
+2016-10-20 17:13:51.073+0000 INFO  [o.n.k.i.t.l.c.CheckPointerImpl] Check Pointing triggered by scheduler for time threshold [20]:  Check pointing completed
+2016-10-20 17:13:51.073+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Starting log pruning.
+2016-10-20 17:13:51.073+0000 INFO  [o.n.k.i.t.l.p.LogPruningImpl] Log Rotation [0]:  Log pruning complete.
+2016-10-20 17:13:53.529+0000 INFO  [o.n.k.i.a.i.s.OnlineIndexSamplingJob] Sampled index :Item(uuid) with 1 unique values in sample of avg size 1 taken from index containing 1 entries
+2016-10-20 18:08:28.008+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1414ms.
+2016-10-20 18:15:56.007+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1389ms.
+2016-10-20 18:29:27.006+0000 WARN  [o.n.k.i.c.MonitorGc] GC Monitor: Application threads blocked for 1373ms.
