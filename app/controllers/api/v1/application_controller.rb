@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+class API::V1::ApplicationController < ActionController::Base
   include Pundit
   protect_from_forgery
 
@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||=
-        #User.find(session[:user_id]) if session[:user_id]
-        User.find_by(name:"Joe Joey")
+        User.find(session[:user_id]) if session[:user_id]
+        #User.find_by(name:"Joe Joey")
   end
   helper_method :current_user
 end
