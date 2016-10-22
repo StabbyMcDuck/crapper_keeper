@@ -1,10 +1,13 @@
 class User 
   include Neo4j::ActiveNode
-  property :provider, type: String
-  property :uid, type: String
+
+  property :created_at, type: DateTime
   property :name, type: String
   property :oauth_token, type: String
   property :oauth_expires_at, type: DateTime
+  property :provider, type: String
+  property :uid, type: String
+  property :updated_at, type: DateTime
 
   has_many :out, :containers, type: :OWNS
 
