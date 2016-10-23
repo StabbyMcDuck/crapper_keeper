@@ -80,6 +80,13 @@
                   <%= link_to "Sign in with Github",
                               "/auth/github", id: "github_sign_in",
                               class: "btn btn-primary btn-lg" %></h3>
+                              <br>
+                <%- if OmniAuth.strategies.include? OmniAuth::Strategies::Developer %>
+                <h3 class="large-font-sign-in">
+                  <%= link_to "Sign in as Developer",
+                              "/auth/developer", id: "developer_sign_in",
+                              class: "btn btn-primary btn-lg" %></h3>
+                <%- end %>
             <% end %>
           </div>
 

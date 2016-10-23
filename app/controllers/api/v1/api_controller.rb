@@ -9,9 +9,19 @@ class APIController < ActionController::Base
   end
 
   def current_user
-    @current_user ||=
+    @current_user ||= User.find_by(id: session[:user_id])
         #User.find(session[:user_id]) if session[:user_id]
-        User.find_by(name:"Joe Joey")
+        #User.find_by(name:"Joe Joey")
   end
   helper_method :current_user
+
+  def signed_in?
+    !!current_user
+  end
+  helper_method :current_user_signed_in?
+
+  def current_user = (user)
+    @current_user = user
+    session[:user_id] - user.nil? ? nil : user.id
+  end
 end
