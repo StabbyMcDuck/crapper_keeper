@@ -1,1 +1,1 @@
-json.partial! "containers/container", container: @container
+json.partial! "api/v1/containers/container", container: @container

@@ -10,5 +10,10 @@ class Container
   has_many :out, :containers, type: :CONTAINS
   has_one :in, :user, type: :OWNS
 
+  # validations
+  validates :name,
+            presence: true
 
+  validates :user,
+            presence: true
 end

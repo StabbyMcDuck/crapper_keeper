@@ -22,9 +22,9 @@ require 'rspec/rails'
 #
 # Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
-Dir["#{Rails.root}/app/models/**/*.rb"].each do |model|
-  load model
-end
+#Dir["#{Rails.root}/app/models/**/*.rb"].each do |model|
+#  load model
+#end
 
 RSpec.configure do |config|
   # RSpec Rails can automatically mix in different behaviours to your tests

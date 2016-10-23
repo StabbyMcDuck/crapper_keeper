@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :container do
-    uid { generate(:container_cid) }
+    description { Faker::Hipster.paragraph }
+    name { Faker::Commerce.product_name }
+    user
   end
 
-  sequence(:container_cid) { |n|
-    n
-  }
+
 end

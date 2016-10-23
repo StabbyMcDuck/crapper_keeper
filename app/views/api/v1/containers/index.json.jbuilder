@@ -1,1 +1,1 @@
-json.array! @containers, partial: 'containers/container', as: :container
+json.array! @containers, partial: "api/v1/containers/container", as: :container

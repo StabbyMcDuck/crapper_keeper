@@ -41,6 +41,8 @@ group :development, :test do
   gem 'dotenv-rails'
   # Make fake users
   gem 'factory_girl_rails', '~> 4.7'
+  # Make fake data for testing descriptions
+  gem 'faker', '~> 1.6', '>= 1.6.6'
   # Test and documentation API
   gem 'rspec_api_documentation', '~> 4.8'
   gem 'rspec-json_expectations', '~> 1.4'

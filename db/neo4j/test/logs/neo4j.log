@@ -52,3 +52,4 @@ Caused by: org.neo4j.helpers.PortBindException: Address localhost:7472 is alread
 2016-10-21 21:37:46.971+0000 INFO  Bolt enabled on localhost:7473.
 2016-10-21 21:37:54.303+0000 INFO  Started.
 2016-10-21 21:37:55.156+0000 INFO  Remote interface available at http://localhost:7475/
+2016-10-23 03:10:56.924+0000 INFO  Transaction with id 451 has been automatically rolled back.

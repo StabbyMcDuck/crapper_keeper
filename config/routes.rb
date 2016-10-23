@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :users
+      resources :users, except: [:create, :destroy, :update]
       resources :items
       resources :containers
     end
