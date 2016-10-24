@@ -2,6 +2,8 @@ class SessionsController < ApplicationController
   protect_from_forgery except: :create
 
   def create
+    skip_authorization
+
     auth = request.env['omniauth.auth']
     # Find an identity here
     @identity = Identity.find_with_omniauth(auth)
@@ -37,6 +39,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    skip_authorization
+
     self.current_user = nil
     redirect_to root_url, notice: "Signed out!"
   end
