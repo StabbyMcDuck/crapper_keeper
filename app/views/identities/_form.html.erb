@@ -1,0 +1,27 @@
+<%= form_for(identity) do |f| %>
+  <% if identity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(identity.errors.count, "error") %> prohibited this identity from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uid %>
+    <%= f.text_field :uid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :oauth_token %>
+    <%= f.text_field :oauth_token %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

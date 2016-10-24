@@ -27,3 +27,5 @@
 /.idea/workspace.xml
 
 bower_components
+
+db/neo4j

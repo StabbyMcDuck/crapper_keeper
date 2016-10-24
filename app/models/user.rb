@@ -1,23 +1,14 @@
 class User 
   include Neo4j::ActiveNode
-  property :provider, type: String
-  property :uid, type: String
+
+  property :created_at, type: DateTime
   property :name, type: String
-  property :oauth_token, type: String
-  property :oauth_expires_at, type: DateTime
+  property :updated_at, type: DateTime
 
   has_many :out, :containers, type: :OWNS
+  has_many :out, :identities, type: :LOGS_IN_WITH
 
-
-  def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.name = auth.info.name
-      user.oauth_token = auth.credentials.token
-      user.oauth_expires_at = Time.at(auth.credentials.expires_at) unless auth.credentials.expires_at.blank?
-      user.save!
-    end
+  def self.create_with_omniauth(info)
+    create(name: info["name"])
   end
-
 end

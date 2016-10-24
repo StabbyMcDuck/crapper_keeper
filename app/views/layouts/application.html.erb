@@ -29,6 +29,12 @@
           <li>
             <%= link_to "Containers", containers_path %>
           </li>
+          <li>
+            <%= link_to "Items", items_path %>
+          </li>
+          <li>
+            <%= link_to "Identities", identities_path %>
+          </li>
           <% if current_user %>
               <li>
                 <%= link_to "Sign out", signout_path, id: "sign_out" %>

@@ -19,12 +19,24 @@ class ContainerPolicy
     @container = container
   end
 
-  # user can update the contents of container
-  def update?
+  def create?
+    user == container.user
+  end
+
+  def destroy?
+    user == container.user
+  end
+
+  def new?
     user == container.user
   end
 
   def show?
+    user == container.user
+  end
+
+  # user can update the contents of container
+  def update?
     user == container.user
   end
 end

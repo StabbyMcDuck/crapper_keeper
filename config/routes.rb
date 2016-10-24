@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :users, except: [:create, :destroy, :update]
+      resources :items
+      resources :containers
+    end
+  end
+
   resources :users
   resources :items
   resources :containers
+  resources :identities, except: [:create, :edit, :update]
+
   get '/'=>'welcome#index', as: :root
   get 'welcome/index'
 

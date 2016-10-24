@@ -1,6 +1,7 @@
 class Item
   include Neo4j::ActiveNode
 
+
   # constants
   NOTIFICATION_FREQUENCIES = %w(immediately daily weekly monthly)
   NOTIFICATION_FREQUENCY_SET = Set.new NOTIFICATION_FREQUENCIES
@@ -24,12 +25,14 @@ class Item
                 in: NOTIFICATION_STYLES
             }
 
+  property :created_at, type: DateTime
   property :name, type: String
   property :description, type: String
   property :count, type: Integer
   property :last_used_at, type: DateTime
   property :notification_style, type: String
   property :notification_frequencies, type: String
+  property :updated_at, type: DateTime
 
   has_one :in, :container, type: :CONTAINS
 

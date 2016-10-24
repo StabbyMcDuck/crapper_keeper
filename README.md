@@ -1,28 +1,7 @@
 # README
+[![Build Status](https://travis-ci.org/StabbyMcDuck/crapper_keeper.svg?branch=master)](https://travis-ci.org/StabbyMcDuck/crapper_keeper)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+[![Code Climate](https://codeclimate.com/github/StabbyMcDuck/crapper_keeper/badges/gpa.svg)](https://codeclimate.com/github/StabbyMcDuck/crapper_keeper)
 ## Configuration
 Create a `.env` in the root directory.  
 Add the Facebook App Secret
