@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <%- parent_containers = Container.all.to_a.reject { |c| c.id == container.id } %>
+  <%- parent_containers = policy_scope(Container).to_a.reject { |c| c.id == container.id } %>
   <%- unless parent_containers.empty? %>
     <div class="parent-field">
       <div class="col-sm-3">

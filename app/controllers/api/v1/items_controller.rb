@@ -1,11 +1,10 @@
-class API::V1::ItemsController < ApplicationController
-  before_action :authenticate
+class API::V1::ItemsController < API::V1::APIController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = policy_scope(Item)
   end
 
   # GET /items/1
@@ -16,6 +15,7 @@ class API::V1::ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+    authorize @item
   end
 
   # GET /items/1/edit
@@ -26,6 +26,7 @@ class API::V1::ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
+    authorize @item
 
     respond_to do |format|
       if @item.save
@@ -61,6 +62,7 @@ class API::V1::ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
+      authorize @item
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

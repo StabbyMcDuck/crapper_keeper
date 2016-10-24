@@ -1,4 +1,4 @@
-class ContainerPolicy
+class UserPolicy
   class Scope
     attr_reader :user, :scope
 
@@ -8,35 +8,35 @@ class ContainerPolicy
     end
 
     def resolve
-      scope.where(user: user)
+      scope.where(id: user.id)
     end
   end
 
-  attr_reader :user, :container
+  attr_reader :signed_in_user, :user
 
-  def initialize(user, container)
+  def initialize(signed_in_user, user)
+    @signed_in_user = signed_in_user
     @user = user
-    @container = container
   end
 
   def create?
-    user == container.user
+    false
   end
 
   def destroy?
-    user == container.user
+    false
   end
 
   def new?
-    user == container.user
+    false
   end
 
   def show?
-    user == container.user
+    signed_in_user == user
   end
 
   # user can update the contents of container
   def update?
-    user == container.user
+    signed_in_user == user
   end
 end

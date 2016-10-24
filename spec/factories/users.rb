@@ -1,9 +1,5 @@
 FactoryGirl.define do
   factory :user do
-    uid { generate(:user_uid) }
+    name { Faker::Superhero.name }
   end
-
-  sequence(:user_uid) { |n|
-    n
-  }
 end

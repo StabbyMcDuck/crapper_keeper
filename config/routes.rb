@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :users
   resources :items
   resources :containers
+  resources :identities, except: [:create, :edit, :update]
+
   get '/'=>'welcome#index', as: :root
   get 'welcome/index'
 

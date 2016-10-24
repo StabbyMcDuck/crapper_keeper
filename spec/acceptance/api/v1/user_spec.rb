@@ -2,6 +2,20 @@ require 'rails_helper'
 require 'rspec_api_documentation/dsl'
 
 RSpec.resource 'User', type: :acceptance do
+  let(:authorization) {
+    "Basic #{Base64.encode64("#{identity.uid}:#{identity.oauth_token}")}"
+  }
+
+  let(:identity){
+    FactoryGirl.create(:identity)
+  }
+
+  let(:user){
+    identity.user
+  }
+
+  header "Authorization", :authorization
+
   get 'api/v1/users' do
     example('Get all users when there are no users') do
       do_request
@@ -10,15 +24,15 @@ RSpec.resource 'User', type: :acceptance do
       expect(response_body).to include_json []
     end
 
-    example('Get all users') do
-      users = FactoryGirl.create_list(:user, 2)
+    example('Get all users -- only shows yourself') do
+      FactoryGirl.create(:user)
 
       do_request
 
       expect(status).to eq(200)
-      expect(response_body).to include_json(UnorderedArray(*users.map {
-          |user| user_json(user)
-      }))
+      expect(response_body).to include_json([
+         user_json(user)
+      ])
     end
 
   end
@@ -37,19 +51,31 @@ RSpec.resource 'User', type: :acceptance do
 
     context('With good ID') do
       let(:id) { user.id }
-      let(:user) { FactoryGirl.create(:user) }
 
-      example('Shows user') do
-        do_request
+      context('With your own ID') do
+        example('Shows user') do
+          do_request
 
-        expect(status).to eq(200)
-        expect(response_body).to include_json(user_json(user))
+          expect(status).to eq(200)
+          expect(response_body).to include_json(user_json(user))
+        end
+      end
+
+      context('With someone elses ID') do
+        let(:user) { FactoryGirl.create(:user) }
+
+        example('Is forbidden') do
+          do_request
+
+          expect(status).to eq(403)
+          expect(response_body).to include_json({status:403,error:"Forbidden"})
+        end
       end
     end
   end
   private
   def user_json(user)
-    {uid: user.uid, name: user.name}
+    {name: user.name}
   end
 end
 

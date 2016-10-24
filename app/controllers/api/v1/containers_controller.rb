@@ -1,11 +1,11 @@
-class API::V1::ContainersController < ApplicationController
-  before_action :authenticate
+class API::V1::ContainersController < API::V1::APIController
+  before_action :authorize_parent, only: [:create, :update]
   before_action :set_container, only: [:show, :edit, :update, :destroy]
 
   # GET /containers
   # GET /containers.json
   def index
-    @containers = Container.all
+    @containers = policy_scope(Container)
   end
 
   # GET /containers/1
@@ -26,6 +26,8 @@ class API::V1::ContainersController < ApplicationController
   # POST /containers.json
   def create
     @container = Container.new(container_params)
+    @container.user = current_user
+    authorize @container
 
     respond_to do |format|
       if @container.save
@@ -58,13 +60,24 @@ class API::V1::ContainersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_container
-      @container = Container.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def container_params
-      params.require(:container).permit(:name, :description, :parent_id, :user_id)
+  def authorize_parent
+    parent_id = container_params['parent_id']
+
+    if parent_id
+      parent = Container.find(parent_id)
+      authorize parent, :show?
     end
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_container
+    @container = Container.find(params[:id])
+    authorize @container
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def container_params
+    params.require(:container).permit(:name, :description, :parent_id)
+  end
 end

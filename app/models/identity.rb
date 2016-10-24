@@ -1,6 +1,8 @@
 class Identity
   include Neo4j::ActiveNode
 
+  IMMUTABLE_PROVIDERS = ['facebook', 'github'].freeze
+
   property :provider, type: String
   property :oauth_token, type: String
   property :oauth_expires_at, type: DateTime
@@ -13,6 +15,8 @@ class Identity
   validates :provider,
             presence: true
   validates :uid,
+            presence: true
+  validates :user,
             presence: true
 
   # Class Methods

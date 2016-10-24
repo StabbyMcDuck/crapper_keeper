@@ -5,7 +5,7 @@ class ContainersController < ApplicationController
   # GET /containers
   # GET /containers.json
   def index
-    @containers = Container.all
+    @containers = policy_scope(Container)
   end
 
   # GET /containers/1
@@ -15,7 +15,8 @@ class ContainersController < ApplicationController
 
   # GET /containers/new
   def new
-    @container = Container.new
+    @container = Container.new(user_id: current_user.id)
+    authorize @container
   end
 
   # GET /containers/1/edit
@@ -26,6 +27,8 @@ class ContainersController < ApplicationController
   # POST /containers.json
   def create
     @container = Container.new(container_params)
+    @container.user = current_user
+    authorize @container
 
     respond_to do |format|
       if @container.save
@@ -61,10 +64,11 @@ class ContainersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_container
       @container = Container.find(params[:id])
+      authorize @container
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def container_params
-      params.require(:container).permit(:name, :description, :parent_id, :user_id)
+      params.require(:container).permit(:name, :description, :parent_id)
     end
 end

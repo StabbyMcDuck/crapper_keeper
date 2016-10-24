@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Identities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Provider</th>
+      <th>OAuth Token</th>
+      <th>OAuth Expires At</th>
+      <th>UID</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @identities.each do |identity| %>
+      <tr>
+        <td><%= identity.provider %></td>
+        <td><%= identity.oauth_token %></td>
+        <td><%= identity.oauth_expires_at %></td>
+        <td><%= identity.uid %></td>
+        <td><%= link_to 'Show', identity %></td>
+        <td>
+
+        </td>
+        <td><%= link_to 'Destroy', identity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Identity', new_identity_path %>
