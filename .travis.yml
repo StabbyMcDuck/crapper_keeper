@@ -7,5 +7,6 @@ jdk: oraclejdk8
 before_script:
   - bundle exec rake neo4j:install[community-3.0.3,test]
   - bundle exec rake neo4j:config[test,7475]
+  - echo 'dbms.security.auth_enabled=false' >> db/neo4j/test/conf/neo4j.conf
   - bundle exec rake neo4j:start[test] --trace
   - sleep 20
