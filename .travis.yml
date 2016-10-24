@@ -2,5 +2,10 @@ language: ruby
 cache: bundler
 rvm:
   - 2.3.0
-services:
-  - neo4j
+# See https://github.com/neo4jrb/neo4j/blob/f1c51da11bfe776fcb6e1f10d25ae482071951fb/.travis.yml
+jdk: oraclejdk8
+before_script:
+  - bundle exec rake neo4j:install[community-3.0.3,test]
+  - bundle exec rake neo4j:config[test,7475]
+  - bundle exec rake neo4j:start[test] --trace
+  - sleep 20
