@@ -25,6 +25,11 @@
       <%= render partial: '/items/table', locals: { items: @container.items } %>
     <% end %>
   </p>
+
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag(@container.image.url) %>
+  </p>
   <span>
     <%= link_to 'Add Items', items_path(container_id: @container.id), class: "btn btn-success btn-lg" %>
   </span>
