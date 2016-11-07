@@ -28,8 +28,8 @@
 
   <p>
     <strong>Image:</strong>
-    <% if @container.image.count > 0 %>
-     <%= image_tag(@container.image.url) %>
+    <% if @container.image %>
+      <%= image_tag(@container.image.url) %>
     <% else %>
       No image to display!
     <% end %>
