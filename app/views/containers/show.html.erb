@@ -28,7 +28,10 @@
 
   <p>
     <strong>Image:</strong>
-    <%= image_tag(@container.image.url) %>
+    <% if @container.image.count > 0 %>
+     <%= image_tag(@container.image.url) %>
+    <% else %>
+      No image to display! 
   </p>
   <span>
     <%= link_to 'Add Items', items_path(container_id: @container.id), class: "btn btn-success btn-lg" %>
