@@ -29,7 +29,7 @@
   <p>
     <strong>Image:</strong>
     <% if @container.image %>
-      <%= image_tag(@container.image.url) %>
+      <%= image_tag(@container.image_url.to_s) %>
     <% else %>
       No image to display!
     <% end %>
