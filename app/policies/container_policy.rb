@@ -39,4 +39,9 @@ class ContainerPolicy
   def update?
     user == container.user
   end
+
+  def edit?
+    user == container.user
+  end
+  
 end
