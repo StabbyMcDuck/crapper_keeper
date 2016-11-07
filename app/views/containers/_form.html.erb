@@ -44,6 +44,13 @@
     </div>
   <%- end %>
 
+  <div class="image_upload">
+    <div class="col-sm-3">
+      <input type="file" class="filestyle" data-input="false">
+        <%= f.label :image %>
+    </div>
+  </div>
+
   <div class="actions">
     <div class="col-sm-3">
       <%= f.submit class: "btn btn-success btn-lg" %>

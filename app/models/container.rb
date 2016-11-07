@@ -4,6 +4,8 @@ class Container
   property :name, type: String
   property :description, type: String
   property :updated_at, type: DateTime
+  property :image, type: String
+  mount_uploader :attachment, AttachmentUploader
 
   has_one :in, :parent, type: :CONTAINS, model_class: :Container
   has_many :out, :items, type: :CONTAINS
