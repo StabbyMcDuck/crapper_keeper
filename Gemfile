@@ -12,7 +12,7 @@ gem 'bootstrap-sass'
 gem 'carrierwave-neo4j', require: 'carrierwave/neo4j'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-gem 'fog', '~> 1.38'
+gem 'fog-aws', '~> 0.12.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use jquery as the JavaScript library
