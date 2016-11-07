@@ -1,4 +1,4 @@
-<%= form_for(container) do |f| %>
+<%= form_for(container, multipart: true) do |f| %>
   <% if container.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(container.errors.count, "error") %> prohibited this container from being saved:</h2>
