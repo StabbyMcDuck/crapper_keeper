@@ -1,8 +1,6 @@
 class API::V1::APIController < ActionController::Base
   include Pundit
-
-  protect_from_forgery
-
+  
   append_view_path(File.join(Rails.root, 'app/views/api/v1'))
 
   before_action :authenticate
