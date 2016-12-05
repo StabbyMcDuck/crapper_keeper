@@ -1,4 +1,5 @@
 class API::V1::UsersController < API::V1::APIController
+  before_action :authenticate
   before_action :set_user, only: [:show, :update]
 
   # GET /users
