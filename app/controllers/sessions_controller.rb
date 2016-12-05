@@ -34,7 +34,20 @@ class SessionsController < ApplicationController
       end
 
       self.current_user = @identity.user
-      redirect_to root_url, notice: "Signed in!"
+
+      if params.has_key? "code"
+        @identity = Identity.find_or_create_by(
+            user_id: current_user.id,
+            provider: 'crapper_keeper_http_basic'
+        ) do |identity|
+          identity.uid = SecureRandom.uuid
+          identity.oauth_token = SecureRandom.uuid
+        end
+
+        render "/api/v1/identities/show.json.jbuilder"
+      else
+        redirect_to root_url, notice: "Signed in!"
+      end
     end
   end
 
