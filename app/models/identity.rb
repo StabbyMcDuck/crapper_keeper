@@ -21,8 +21,19 @@ class Identity
 
   # Class Methods
 
+  def self.ensure_user(auth:, identity:)
+    unless identity.user.present?
+      identity.user = User.create(name: auth.info.name)
+      identity.save
+    end
+  end
+
   def self.find_with_omniauth(auth)
     update_oauth(find_by(provider: auth["provider"], uid: auth["uid"]), auth.credentials)
+  end
+
+  def self.find_or_create_with_omniauth(auth)
+    find_with_omniauth(auth) || create_with_omniauth(auth)
   end
 
   def self.create_with_omniauth(auth)

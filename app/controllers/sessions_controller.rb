@@ -5,13 +5,7 @@ class SessionsController < ApplicationController
     skip_authorization
 
     auth = request.env['omniauth.auth']
-    # Find an identity here
-    @identity = Identity.find_with_omniauth(auth)
-
-    if @identity.nil?
-      # If no identity was found, create a brand new one here
-      @identity = Identity.create_with_omniauth(auth)
-    end
+    @identity = Identity.find_or_create_with_omniauth(auth)
 
     if signed_in?
       if @identity.user == current_user
@@ -28,13 +22,12 @@ class SessionsController < ApplicationController
         redirect_to root_url, notice: "Successfully linked that account!"
       end
     else
-      unless @identity.user.present?
-        @identity.user = User.create(name: auth.info.name)
-        @identity.save
-      end
+      Identity.ensure_user(auth: auth, identity: @identity)
 
       self.current_user = @identity.user
+
       redirect_to root_url, notice: "Signed in!"
+
     end
   end
 

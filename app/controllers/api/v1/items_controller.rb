@@ -1,4 +1,5 @@
 class API::V1::ItemsController < API::V1::APIController
+  before_action :authenticate
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items

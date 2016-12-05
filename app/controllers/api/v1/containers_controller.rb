@@ -1,4 +1,5 @@
 class API::V1::ContainersController < API::V1::APIController
+  before_action :authenticate
   before_action :authorize_parent, only: [:create, :update]
   before_action :set_container, only: [:show, :edit, :update, :destroy]
 
@@ -31,7 +32,7 @@ class API::V1::ContainersController < API::V1::APIController
 
     respond_to do |format|
       if @container.save
-        format.json { render :show, status: :created, location: @container }
+        format.json { render :show, status: :created, container: @container }
       else
         format.json { render json: @container.errors, status: :unprocessable_entity }
       end
@@ -78,6 +79,6 @@ class API::V1::ContainersController < API::V1::APIController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def container_params
-    params.require(:container).permit(:name, :description, :parent_id)
+    params.require(:container).permit(:name, :description, :image, :parent_id)
   end
 end

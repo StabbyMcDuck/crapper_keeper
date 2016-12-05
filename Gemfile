@@ -17,6 +17,8 @@ gem 'fog-aws', '~> 0.12.0'
 gem 'jbuilder', '~> 2.5'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Gem for Facebook API to convert facebook access token to Identity in API::V1::IdentitiesController#create
+gem 'koala'
 gem 'neo4j'
 gem 'omniauth'
 gem 'omniauth-facebook'
